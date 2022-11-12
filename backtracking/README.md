@@ -12,10 +12,10 @@
 </thead>
 <tbody>
 <tr>
-<td align="center">18430</td>
+<td align="center"><a href="https://www.acmicpc.net/problem/18430">18430</a></td>
 <td align="center">무기 공학</td>
-<td align="center"><img src=""></td>
-<td align="center"><a>바로가기</a></td>
+<td align="center"><img src="https://user-images.githubusercontent.com/118061790/201480763-2f046d62-4bb5-48d6-8a1a-bed2d66603d8.svg"></td>
+<td align="center"><a href="">바로가기</a></td>
 </tr>
 </tbody>
 </table>
