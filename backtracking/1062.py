@@ -1,13 +1,16 @@
 # antic 최소 5글자 이상은 가르쳐야함
 # antic 아닌 글자 뭐 있는지 목록 작성
 # antic 아닌 글자들 뭐뭐 있는지 각 단어마다 리스트에 넣어줌
+
 # 시간초과 -> deepcopy, set으로 dfs
 # 시간초과 해결 : alphabet을 key로 하는 dict 만들어서 선택됐는지 안됐는지
+
 # 반례 : 각 단어에서 antic 제외하고 남는 문자가 antic제외하고 더 가르칠 수 있는 문자 개수보다 작을 때
+# 각 단어에서 antic말고 새로운 글자는 k 뿐인데 더 가르칠 수 있는 문자는 2개일 때
 # 2 7
 # antatica
 # antaktica
-# 각 단어에서 antic말고 새로운 글자는 k 뿐인데 더 가르칠 수 있는 문자는 2개
+# 반례 해결 : dfs의 return if 조건문 추가
 
 import sys
 from collections import defaultdict
