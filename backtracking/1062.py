@@ -5,6 +5,7 @@
 # alphabet을 key로 하는 dict 만들어서 선택됐는지 안됐는지
 
 import sys
+from collections import defaultdict
 
 answer = 0
 N, K = map(int, sys.stdin.readline().split())
@@ -17,6 +18,8 @@ word = []
 # antic 제외하고 몇 개 글자 더 선택할 수 있는가
 learn_more_letter = K - 5
 
+learn = defaultdict(int)
+
 for i in range(N):
     tmp_letter = str(input())
     tmp_letter = set(tmp_letter[4:-4])
@@ -25,31 +28,36 @@ for i in range(N):
     letter_without_5.update(tmp_letter)
 letter_without_5 = list(letter_without_5)
 word = list(word)
-def getMaxWords(alphabets):
+
+def getMaxWords():
     sum = 0
-    tmp_word = word[:]
-    for w in tmp_word:
-        tmp = set(w) - set(alphabets)
-        if len(tmp) == 0:
+    tmp_words = word[:]
+    for tmp_word in tmp_words:
+        check = True
+        for w in tmp_word:
+            if not learn[w]:
+                check = False
+        if check:
             sum += 1
     return sum
 
-def selectAlphabet(idx, alphabets):
+def selectAlphabet(idx, cnt):
     global answer
-    if len(alphabets) == learn_more_letter:
-        answer = max(answer, getMaxWords(alphabets))
+    if cnt == learn_more_letter:
+        answer = max(answer, getMaxWords())
         return
 
     for i in range(idx, len(letter_without_5)):
-        next_selected = alphabets[:]
-        next_selected.append(letter_without_5[i])
-        selectAlphabet(i+1, next_selected)
+        learn[letter_without_5[i]] = 1
+        selectAlphabet(i+1, cnt+1)
+        learn[letter_without_5[i]] = 0
+
 
 if learn_more_letter < 0:
     print(0)
 elif learn_more_letter == 21:
     print(N)
 else:
-    selectAlphabet(0, list())
+    selectAlphabet(0, 0)
+    print(answer)
 
-print(answer)
