@@ -29,5 +29,17 @@
 <td align="center"><img src="https://user-images.githubusercontent.com/118061790/201522722-6f71020c-8fbf-414c-914c-5674b7118a43.svg" width="25px" height="25px" align="center"></td>
 <td align="center"><a href="">바로가기</a></td>
 </tr>
+<tr>
+<td align="center"><a href="https://www.acmicpc.net/problem/6987">6987</a></td>
+<td align="center">월드컵</td>
+<td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
+<td align="center"><a href="">바로가기</a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.acmicpc.net/problem/19942">19942</a></td>
+<td align="center">다이어트</td>
+<td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
+<td align="center"><a href="">바로가기</a></td>
+</tr>
 </tbody>
 </table>
