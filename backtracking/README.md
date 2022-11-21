@@ -41,5 +41,23 @@
 <td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
 <td align="center"><a href="">바로가기</a></td>
 </tr>
+<tr>
+<td align="center"><a href="https://www.acmicpc.net/problem/20208">20208</a></td>
+<td align="center">진우의 민트초코우유</td>
+<td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
+<td align="center"><a href="">바로가기</a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.acmicpc.net/problem/2922">2922</a></td>
+<td align="center">즐거운 단어</td>
+<td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
+<td align="center"><a href="">바로가기</a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.acmicpc.net/problem/1799">1799</a></td>
+<td align="center">비숍</td>
+<td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
+<td align="center"><a href="">바로가기</a></td>
+</tr>
 </tbody>
 </table>
