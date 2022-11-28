@@ -6,24 +6,31 @@ from collections import defaultdict
 word = input()
 LYn = False
 underba = []
+
 answer = 0
 # L, 자음 21, 모음 5
-alphabet_visited = defaultdict(int)
-alphabet_visited['L'] = 0
-alphabet_visited['B'] = 0
-alphabet_visited['A'] = 0
+alphabets = ['엘', '자', '모']
 
 for i in range(len(word)):
     if word[i] == '_':
-        underba.append(word[i])
+        underba.append(i)
     elif word[i] == 'L':
         Lyn = True
 
+# underba 변수 인덱스, 빈칸만 완성된 알파벳, L 여부, 만들 수 있는 단어 수
 def dfs(idx, w, yn, cnt):
     global answer
     if idx == len(underba):
-        answer += cnt
+        if yn:
+            answer += cnt
         return
+
+    for alphabet in alphabets:
+        w[idx] = alphabet
+        if alphabet == '엘':
+
+
+
 
 
 
