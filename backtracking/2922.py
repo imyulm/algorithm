@@ -4,7 +4,6 @@
 # 밑줄에 들어갈 수 있는 알파벳 : L 제외 자음, 모음, L -> dfs 안에 for문에서 사용
 
 word = input()
-LYn = False
 underba = []
 
 answer = 0
@@ -34,7 +33,8 @@ def answerYn(answer_word):
         else:
             cons_num += 1
             vowel_num = 0
-
+    if vowel_num == 3 or cons_num == 3:
+        return False
     return True
 
 # underba 변수 인덱스, 여태껏 완성된 단어, 밑줄에 쓰인 알파벳
@@ -42,23 +42,24 @@ def dfs(idx, w, unw):
     global answer
     if idx == len(underba):
         if answerYn(w):
-
+            tmp_answer = 1
+            for i in range(len(unw)):
+                if unw[i] == 'A':
+                    tmp_answer *= 5
+                elif unw[i] == 'B':
+                    tmp_answer *= 20
+                else:
+                    tmp_answer *= 1
+            answer += tmp_answer
         return
 
     for alphabet in alphabets:
-        w[idx] = alphabet
+        w[underba[idx]] = alphabet
         unw.append(alphabet)
         dfs(idx+1, w, unw)
-        w[idx] = '_'
+        w[underba[idx]] = '_'
         unw.pop()
 
 
-
-
-
-
-dfs(0, word, [])
-
-
-
-
+dfs(0, list(word), [])
+print(answer)
