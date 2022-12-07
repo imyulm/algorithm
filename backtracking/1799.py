@@ -4,17 +4,17 @@ import sys
 N = int(input())
 
 # 오위 -> 왼아
+# 비숍이 있을 수 있는 칸 모으기
 rightTop = []
 visited_rightTop = [[False]*N for _ in range(N)]
 rightTop_cnt = 0
 # 왼위 -> 오아
+# 비숍이 있을 수 있는 칸 모으기
 leftTop = []
 visited_leftTop = [[False]*N for _ in range(N)]
 leftTop_cnt = 0
 
 board = []
-
-answer = 0
 
 for _ in range(N):
     board.append(list(map(int, sys.stdin.readline().split())))
@@ -27,14 +27,29 @@ for i in range(N):
         else:
             leftTop.append([i, j])
 
-def dfs(bishop, visited, cnt):
-    global answer
+def dfs(bishop, idx, cnt):
+    global rightTop_cnt, leftTop_cnt
+    if idx == len(bishop):
+        x, y = bishop[0]
+        if x % 2 == 0 and y % 2 == 0:
+            rightTop_cnt = max(cnt, rightTop_cnt)
+        else:
+            leftTop_cnt = max(cnt, leftTop_cnt)
+        return
 
+    x, y = bishop[idx]
+    if x % 2 == 0 and y % 2 == 0:
+        if not visited_rightTop[x][y]:
+            visited_rightTop[x][y] = True
+
+    else:
+        if not visited_leftTop[x][y]:
+            visited_leftTop[x][y] = True
 
 
 
 # 2개로 쪼개서 2^(5*5) * 2 계산으로 줄임
 if len(rightTop) > 0:
-    dfs(rightTop, visited_rightTop, 0)
+    dfs(rightTop, 0, 0)
 if len(leftTop) > 0:
-    dfs(leftTop, visited_leftTop, 0)
+    dfs(leftTop, 0, 0)
