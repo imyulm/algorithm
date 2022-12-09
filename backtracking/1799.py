@@ -38,14 +38,15 @@ def dfs(bishop, idx, cnt):
         return
 
     x, y = bishop[idx]
-    if x % 2 == 0 and y % 2 == 0:
-        if not visited_rightTop[x][y]:
-            visited_rightTop[x][y] = True
-
+    if visited_rightTop[x+y] or visited_leftTop[x-y+N-1]:
+        dfs(bishop, idx+1, cnt)
     else:
-        if not visited_leftTop[x][y]:
-            visited_leftTop[x][y] = True
-
+        visited_rightTop[x+y] = True
+        visited_leftTop[x-y+N-1] = True
+        dfs(bishop, idx+1, cnt+1)
+        visited_rightTop[x + y] = False
+        visited_leftTop[x - y + N - 1] = False
+        dfs(bishop, idx+1, cnt+1)
 
 
 # 2개로 쪼개서 2^(5*5) * 2 계산으로 줄임
