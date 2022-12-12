@@ -27,7 +27,7 @@ for _ in range(N):
 for i in range(N):
     for j in range(N):
         if board[i][j] != 1: continue
-        if i % 2 == 0 and j % 2 == 0:
+        if (i % 2 == 0 and j % 2 == 0) or (i % 2 != 0 and j % 2 != 0):
             bishop1.append([i, j])
         else:
             bishop2.append([i, j])
@@ -35,14 +35,18 @@ for i in range(N):
 def dfs(bishop, idx, cnt):
     global bishop1_cnt, bishop2_cnt
     if idx == len(bishop):
+        # 비숍이 있을 수 있는 칸 중 어떤 유형인지
         x, y = bishop[0]
+        # 1번 유형
         if x % 2 == 0 and y % 2 == 0:
             bishop1_cnt = max(cnt, bishop1_cnt)
+        # 2번 유형
         else:
             bishop2_cnt = max(cnt, bishop2_cnt)
         return
 
     x, y = bishop[idx]
+    # 대각선에 비숍이 있는 경우
     if visited_rightTop[x+y] or visited_leftTop[x-y+N-1]:
         dfs(bishop, idx+1, cnt)
     else:
@@ -51,7 +55,6 @@ def dfs(bishop, idx, cnt):
         dfs(bishop, idx+1, cnt+1)
         visited_rightTop[x+y] = False
         visited_leftTop[x-y+N-1] = False
-        dfs(bishop, idx+1, cnt+1)
 
 
 # 2개로 쪼개서 2^(5*5) * 2 계산으로 줄임
