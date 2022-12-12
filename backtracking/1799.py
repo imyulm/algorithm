@@ -27,8 +27,10 @@ for _ in range(N):
 for i in range(N):
     for j in range(N):
         if board[i][j] != 1: continue
+        # 비숍이 있을 수 있는 칸 (1번)
         if (i % 2 == 0 and j % 2 == 0) or (i % 2 != 0 and j % 2 != 0):
             bishop1.append([i, j])
+        # 비숍이 있을 수 있는 칸 (2번)
         else:
             bishop2.append([i, j])
 
@@ -37,10 +39,10 @@ def dfs(bishop, idx, cnt):
     if idx == len(bishop):
         # 비숍이 있을 수 있는 칸 중 어떤 유형인지
         x, y = bishop[0]
-        # 1번 유형
+        # 비숍이 있을 수 있는 칸 (1번)
         if (x % 2 == 0 and y % 2 == 0) or (x % 2 != 0 and y % 2 != 0):
             bishop1_cnt = max(cnt, bishop1_cnt)
-        # 2번 유형
+        # 비숍이 있을 수 있는 칸 (2번)
         else:
             bishop2_cnt = max(cnt, bishop2_cnt)
         return
