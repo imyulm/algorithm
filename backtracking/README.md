@@ -12,6 +12,12 @@
 </thead>
 <tbody>
 <tr>
+<td align="center"><a href="https://www.acmicpc.net/problem/1342">1342</a></td>
+<td align="center">행운의 문자열</td>
+<td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
+<td align="center"><a href="">바로가기</a></td>
+</tr>
+<tr>
 <td align="center"><a href="https://www.acmicpc.net/problem/18430">18430</a></td>
 <td align="center">무기 공학</td>
 <td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
@@ -56,6 +62,18 @@
 <tr>
 <td align="center"><a href="https://www.acmicpc.net/problem/1799">1799</a></td>
 <td align="center">비숍</td>
+<td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
+<td align="center"><a href="">바로가기</a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.acmicpc.net/problem/7682">7682</a></td>
+<td align="center">틱택토</td>
+<td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
+<td align="center"><a href="">바로가기</a></td>
+</tr>
+<tr>
+<td align="center"><a href="https://www.acmicpc.net/problem/16938">16938</a></td>
+<td align="center">캠프준비</td>
 <td align="center"><img src="https://user-images.githubusercontent.com/118061790/201482833-e512f6b1-c16d-481b-b848-a53dceb19b36.svg" width="25px" height="25px" align="center"></td>
 <td align="center"><a href="">바로가기</a></td>
 </tr>
