@@ -38,7 +38,7 @@ def dfs(bishop, idx, cnt):
         # 비숍이 있을 수 있는 칸 중 어떤 유형인지
         x, y = bishop[0]
         # 1번 유형
-        if x % 2 == 0 and y % 2 == 0:
+        if (x % 2 == 0 and y % 2 == 0) or (x % 2 != 0 and y % 2 != 0):
             bishop1_cnt = max(cnt, bishop1_cnt)
         # 2번 유형
         else:
@@ -46,15 +46,18 @@ def dfs(bishop, idx, cnt):
         return
 
     x, y = bishop[idx]
-    # 대각선에 비숍이 있는 경우
+    # 2개 대각선 중 하나라도 해당자리와 겹치는 경우(1-1)
     if visited_rightTop[x+y] or visited_leftTop[x-y+N-1]:
         dfs(bishop, idx+1, cnt)
     else:
         visited_rightTop[x+y] = True
         visited_leftTop[x-y+N-1] = True
+        # 해당 자리에 비숍 놓는 경우(2-1)
         dfs(bishop, idx+1, cnt+1)
         visited_rightTop[x+y] = False
         visited_leftTop[x-y+N-1] = False
+        # 2개 대각선 아무것도 해당 자리에 걸치지 않고(1-2) 해당 자리에 비숍을 놓지 않는 경우(2-2)
+        dfs(bishop, idx + 1, cnt)
 
 
 # 2개로 쪼개서 2^(5*5) * 2 계산으로 줄임
