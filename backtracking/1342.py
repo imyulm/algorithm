@@ -1,10 +1,11 @@
 # 10자리 글자를 재배치 하는 경우의 수: 최대 10! < 1억 -> 완탐
+# 시간초과 : 전체 경우의 수가 1억 미만이어도 if not in 으로 찾는다거나 할 때 시간초과가 날 수 있음 주의 -> set 사용
 S = list(input())
 
 # 각 문자열 자리 방문 여부
 visited = [False] * len(S)
 
-answer_list = set()
+answer_list = s()
 
 def dfs(s):
     if len(s) == len(S):
