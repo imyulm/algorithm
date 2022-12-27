@@ -1,3 +1,5 @@
+# return 조건 왜 잘못 생각했는가?
+# dfs 탈 때 하나 빼고 dfs태우고 넣고 dfs 태우는 문제 다시 보기 (프로그래머스 +1 어쩌구 연산자 문제)
 import sys
 
 # N: 문제 개수, L: 문제 최저 난이도, R: 문제 최고 난이도, X: R-L의 최소 차이
@@ -11,7 +13,7 @@ answer = 0
 # 중복 불가 조합
 def dfs(idx, selected):
     global answer
-    if idx > len(A_list):return
+    if idx > len(A_list): return
     if len(selected) >= 2:
         sum_A = 0
         tmp_L = 10000000000
